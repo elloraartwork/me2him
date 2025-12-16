@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para a minha pessoinha</title> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+
+         * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+         body {
+            background: linear-gradient(135deg, #5e0606, #5e0606);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            color: #333;
+         }
+
+         .container {
+            background-color: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            max-width: 500px;
+            padding: 30px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 3px solid #000000;
+        }
+
+         h1 {
+            color: #7a0808;
+            margin-bottom: 20px;
+            font-size: 28px;
+        }
+
+         h2 {
+            color: #7a0808;
+            margin-bottom: 15px;
+            font-size: 22px;
+        }
+        
+        p {
+            margin-bottom: 25px;
+            font-size: 18px;
+            line-height: 1.5;
+        }
+        
+        .gif-container {
+            margin: 25px auto;
+            max-width: 300px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .gif-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .input-container {
+            margin: 25px 0;
+        }
+        
+        input[type="text"] {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #bb0000;
+            border-radius: 10px;
+            font-size: 18px;
+            text-align: center;
+            transition: all 0.3s;
+        }
+        
+        input[type="text"]:focus {
+            outline: none;
+            border-color: #bb0000;
+            box-shadow: 0 0 10px rgba(102, 0, 0, 0.4);
+        }
+        
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 30px;
+        }
+        
+        button {
+            padding: 15px 30px;
+            border: none;
+            border-radius: 10px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            flex: 1;
+            max-width: 150px;
+        }
+        
+        .btn-yes {
+            background-color: #bb0000;
+            color: #ffffff;
+        }
+        
+        .btn-no {
+            background-color: #000000;
+            color: #ffffff;
+        }
+        
+        .btn-yes:hover {
+            background-color: #bb0000;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(102, 0, 0, 0.4);
+        }
+        
+        .btn-no:hover {
+            background-color: #bb0000;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(102, 0, 0, 0.4);
+        }
+        
+        .heart {
+            color: #bb0000;
+            font-size: 40px;
+            margin: 10px;
+            animation: heartbeat 1.5s infinite;
+        }
+        
+        @keyframes heartbeat {
+            0% { transform: scale(1); }
+            5% { transform: scale(1.2); }
+            10% { transform: scale(1.1); }
+            15% { transform: scale(1.3); }
+            50% { transform: scale(1); }
+            100% { transform: scale(1); }
+        }
+        
+        .hidden {
+            display: none;
+        }
+        
+        .message {
+            background-color: #fff9f9;
+            border-radius: 15px;
+            padding: 20px;
+            margin: 20px 0;
+            border-left: 5px solid #bb0000;
+        }
+        
+        .final-message {
+            font-size: 22px;
+            font-weight: bold;
+            color: #bb0000;
+            margin-top: 20px;
+        }
+        
+        .name-display {
+            color: #bb0000;
+            font-weight: bold;
+            font-size: 20px;
+        }
+        
+        footer {
+            margin-top: 30px;
+            color: #888;
+            font-size: 14px;
+        }
+        
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px;
+            }
+            
+            h1 {
+                font-size: 24px;
+            }
+            
+            h2 {
+                font-size: 20px;
+            }
+            
+            button {
+                padding: 12px 20px;
+                font-size: 16px;
+            }
+        }
+
+           .interesting-text {
+            font-size: 24px;
+            font-style: italic;
+            color: #bb0000;
+            margin: 20px 0;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.05); opacity: 0.8; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+        
+        
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Tela 1: Pergunta do nome -->
+        <div id="screen1" class="screen">
+            <i class="fas fa-heart heart"></i>
+            <h1>Olá, digite seu nome se você for o Kayuri</h1>
+            
+            <div class="gif-container">
+                <img src="gifs do dante/dante-dante-meme.gif" alt="dante-dante-meme">
+            </div>
+            
+            <div class="input-container">
+                <input type="text" id="nameInput" placeholder="Digite seu nome aqui...">
+            </div>
+            
+            <button id="submitName" class="btn-yes">Continuar</button>
+        </div>
+        
+        <!-- Tela 2: Pergunta do sábado -->
+        <div id="screen2" class="screen hidden">
+            <i class="fas fa-heart heart"></i>
+            <h2><span class="name-display" id="displayName">Kayuri</span>, você está livre no sábado?</h2>
+            
+            <div class="gif-container">
+                <img src="gifs do dante/archie-devil-may-cry.gif" alt="frame1">
+            </div>
+            
+            <div class="buttons">
+                <button id="saturdayYes" class="btn-yes">Sim</button>
+                <button id="saturdayNo" class="btn-no">Não</button>
+            </div>
+        </div>
+        
+        <!-- NOVA TELA: Tela 3: "Hmmm muito interessante" -->
+        <div id="screen3" class="screen hidden">
+            <i class="fas fa-heart heart"></i>
+            <h2><span class="name-display" id="displayName2">Kayuri</span>, você está livre no sábado?</h2>
+            
+            <div class="interesting-text">Hmmmm... muito interessante! 😏</div>
+            
+            <div class="gif-container">
+                <img src="gifs do dante/jackpot-devil-may-cry.gif" alt="jackpot-devil-may-cry">
+            </div>
+            
+            <p>Vamos para a próxima pergunta então...</p>
+            
+            <button id="continueToDateQuestion" class="btn-yes">Continuar</button>
+        </div>
+        
+        <!-- Tela 4: Mensagem "Que pena" (antiga tela 3) -->
+        <div id="screen4" class="screen hidden">
+            <i class="fas fa-heart-broken heart"></i>
+            <h2>Que pena...</h2>
+            
+            <div class="gif-container">
+                <img src="gifs do dante/dante-devil-may-cry-dmc5.gif" alt="Dante leaving">
+            </div>
+            
+            <div class="message">
+                <p>Fica para a próxima então! Mas você ainda pode me responder uma última pergunta...</p>
+            </div>
+            
+            <button id="continueAnyway" class="btn-yes">Continuar mesmo assim</button>
+        </div>
+        
+        <!-- Tela 5: Pergunta do encontro (antiga tela 4) -->
+        <div id="screen5" class="screen hidden">
+            <i class="fas fa-heart heart"></i>
+            <h2><span class="name-display" id="displayName3">Kayuri</span>, você quer sair comigo?</h2>
+            
+            <div class="gif-container">
+                <img src="gifs do dante/heart-devil-may-cry.gif" alt="heart-devil-may-cry">
+            </div>
+            
+            <div class="buttons">
+                <button id="dateYes" class="btn-yes">Sim</button>
+                <button id="dateNo" class="btn-no">Não</button>
+            </div>
+        </div>
+        
+        <!-- Tela 6: Resposta positiva ao encontro (antiga tela 5) -->
+        <div id="screen6" class="screen hidden">
+            <i class="fas fa-heart heart"></i>
+            <h2>Perfeito! Eu também quero muito!</h2>
+            
+            <div class="gif-container">
+                <img src="gifs do dante/dante clap.gif" alt="Dante clap">
+            </div>
+            
+            <p class="final-message">E agora, a última pergunta...</p>
+            
+            <button id="continueToLast" class="btn-yes">Continuar</button>
+        </div>
+        
+        <!-- Tela 7: Pergunta do sorvete (antiga tela 6) -->
+        <div id="screen7" class="screen hidden">
+            <i class="fas fa-heart heart"></i>
+            <h2><span class="name-display" id="displayName4">Kayuri</span>, você gosta de sorvete? (ops! não tem opção de não rs)</h2>
+            
+            <div class="gif-container">
+                <img src="gifs do dante/devil-may-cry-wacky-woohoo-pizza-man-adventures.gif" alt="dante uwu">
+            </div>
+            
+            <div class="buttons">
+                <button id="iceCreamYes" class="btn-yes">SIM!</button>
+            </div>
+        </div>
+        
+        <!-- Tela 8: Resposta final (antiga tela 7) -->
+        <div id="screen8" class="screen hidden">
+            <i class="fas fa-heart heart"></i>
+            <h2>Perfeito, marcado então!</h2>
+            
+            <div class="gif-container">
+                <img src="gifs do dante/dantechapeu.gif" alt="Dante chapeu">
+            </div>
+            
+            <div class="message">
+                <p>Então combinado! <span class="name-display" id="displayName5">Kayuri</span>, no sábado vamos sair e tomar sorvete juntos!</p>
+                <p>Estou muito animada para nosso encontro! ❤️</p>
+            </div>
+            
+            <p class="final-message"> Hehe ❤️</p>
+            
+            <button id="restart" class="btn-yes">Recomeçar</button>
+        </div>
+        
+        <footer>
+            Feito com ❤️ especialmente para você!
+        </footer>
+    </div>
+</body>
+
+<script>
+     // Substitua *** pelo nome do seu namorado
+        const boyfriendName = "Kayuri"; // Coloque o nome do seu crush aqui
+        
+        // Elementos da tela
+        const screens = document.querySelectorAll('.screen');
+        const nameInput = document.getElementById('nameInput');
+        const submitNameBtn = document.getElementById('submitName');
+        const saturdayYesBtn = document.getElementById('saturdayYes');
+        const saturdayNoBtn = document.getElementById('saturdayNo');
+        const continueToDateQuestionBtn = document.getElementById('continueToDateQuestion');
+        const continueAnywayBtn = document.getElementById('continueAnyway');
+        const dateYesBtn = document.getElementById('dateYes');
+        const dateNoBtn = document.getElementById('dateNo');
+        const continueToLastBtn = document.getElementById('continueToLast');
+        const iceCreamYesBtn = document.getElementById('iceCreamYes');
+        const restartBtn = document.getElementById('restart');
+        
+        // Elementos para exibir o nome
+        const displayNameElements = document.querySelectorAll('.name-display');
+        
+        // Variável para armazenar o nome digitado
+        let userName = "";
+        
+        // Event Listeners
+        
+        // Tela 1: Verificar nome e avançar
+        submitNameBtn.addEventListener('click', function() {
+            userName = nameInput.value.trim();
+            
+            if (userName.toLowerCase() === boyfriendName.toLowerCase() || boyfriendName === "Kayuri") {
+                // Atualiza todos os lugares onde o nome aparece
+                displayNameElements.forEach(element => {
+                    element.textContent = userName || "...";
+                });
+                
+                // Avança para a tela 2
+                showScreen('screen2');
+            } else {
+                alert("Esse site é só para o Kayuri! Digite o nome correto.");
+                nameInput.focus();
+            }
+        });
+        
+        // Também permitir enviar com Enter
+        nameInput.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                submitNameBtn.click();
+            }
+        });
+        
+        // Tela 2: Sábado livre - Sim (agora vai para a NOVA TELA 3)
+        saturdayYesBtn.addEventListener('click', function() {
+            showScreen('screen3');
+        });
+        
+        // Tela 2: Sábado livre - Não (vai para a tela 4)
+        saturdayNoBtn.addEventListener('click', function() {
+            showScreen('screen4');
+        });
+        
+        // NOVA TELA 3: Continuar para pergunta do encontro
+        continueToDateQuestionBtn.addEventListener('click', function() {
+            showScreen('screen5');
+        });
+        
+        // Tela 4: Continuar mesmo assim (para quem disse não para o sábado)
+        continueAnywayBtn.addEventListener('click', function() {
+            showScreen('screen5');
+        });
+        
+        // Tela 5: Quer sair comigo - Sim
+        dateYesBtn.addEventListener('click', function() {
+            showScreen('screen6');
+        });
+        
+        // Tela 5: Quer sair comigo - Não
+        dateNoBtn.addEventListener('click', function() {
+            alert("Que pena... Mas vamos para a última pergunta mesmo assim!");
+            showScreen('screen7');
+        });
+        
+        // Tela 6: Continuar para última pergunta
+        continueToLastBtn.addEventListener('click', function() {
+            showScreen('screen7');
+        });
+        
+        // Tela 7: Gosta de sorvete - Sim (única opção)
+        iceCreamYesBtn.addEventListener('click', function() {
+            showScreen('screen8');
+        });
+        
+        // Tela 8: Reiniciar
+        restartBtn.addEventListener('click', function() {
+            // Limpa o nome digitado
+            nameInput.value = "";
+            userName = "";
+            
+            // Reseta os displays de nome
+            displayNameElements.forEach(element => {
+                element.textContent = "[Nome]";
+            });
+            
+            // Volta para a primeira tela
+            showScreen('screen1');
+        });
+        
+        // Função para mostrar uma tela específica e esconder as outras
+        function showScreen(screenId) {
+            screens.forEach(screen => {
+                if (screen.id === screenId) {
+                    screen.classList.remove('hidden');
+                } else {
+                    screen.classList.add('hidden');
+                }
+            });
+        }
+        
+        // Inicializar: mostrar apenas a primeira tela
+        document.addEventListener('DOMContentLoaded', function() {
+            // Atualiza o texto inicial com o nome do namorado
+            if (boyfriendName !== "Kayuri") {
+                document.querySelector('#screen1 h1').textContent = `Olá, digite seu nome se você for ${boyfriendName}`;
+            }
+            
+            // Focar no input de nome
+            nameInput.focus();
+        });
+    </script>
+</body>
+</html>
+
+        
+
+
+        
+
+
+
+</script>
+</html>
